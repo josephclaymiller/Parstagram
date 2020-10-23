@@ -11,6 +11,7 @@
 		CD75E5B82542C88B007D7277 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75E5B72542C88B007D7277 /* Constants.swift */; };
 		CD75E5BE2542CA68007D7277 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75E5BD2542CA68007D7277 /* LoginViewController.swift */; };
 		CD75E5C12542CA88007D7277 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75E5C02542CA88007D7277 /* FeedViewController.swift */; };
+		CD75E5C525439D0C007D7277 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75E5C425439D0C007D7277 /* CameraViewController.swift */; };
 		CDEEE0812542C5A9002D3DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE0802542C5A9002D3DE7 /* AppDelegate.swift */; };
 		CDEEE0832542C5A9002D3DE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEEE0822542C5A9002D3DE7 /* SceneDelegate.swift */; };
 		CDEEE0882542C5A9002D3DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDEEE0862542C5A9002D3DE7 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		CD75E5B72542C88B007D7277 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD75E5BD2542CA68007D7277 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD75E5C02542CA88007D7277 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		CD75E5C425439D0C007D7277 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		CDEEE07D2542C5A9002D3DE7 /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDEEE0802542C5A9002D3DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDEEE0822542C5A9002D3DE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				CD75E5BD2542CA68007D7277 /* LoginViewController.swift */,
 				CD75E5C02542CA88007D7277 /* FeedViewController.swift */,
+				CD75E5C425439D0C007D7277 /* CameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				CD75E5BE2542CA68007D7277 /* LoginViewController.swift in Sources */,
 				CD75E5C12542CA88007D7277 /* FeedViewController.swift in Sources */,
 				CDEEE0832542C5A9002D3DE7 /* SceneDelegate.swift in Sources */,
+				CD75E5C525439D0C007D7277 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
