@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -20,6 +21,26 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onSubmit(_ sender: UIButton) {
+        // save image post to parse
+        let post = PFObject(className: "Posts")
+        post["author"] = PFUser.current()!
+        post["caption"] = commentField.text
+        
+        guard let imageData = imageView.image?.pngData() else {
+            print("No image")
+            return
+        }
+        let file = PFFileObject(data: imageData)
+        post["image"] = file
+        
+        post.saveInBackground { (success: Bool, error: Error?) in
+            if success {
+                print("save")
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("error")
+            }
+        }
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -41,7 +62,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // get the picked the image and resize
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af.imageScaled(to: size)
         
         imageView.image = scaledImage
         
