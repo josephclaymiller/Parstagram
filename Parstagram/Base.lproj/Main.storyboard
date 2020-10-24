@@ -33,8 +33,8 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKc-UA-zKw">
                                 <rect key="frame" x="79.5" y="528" width="255" height="34"/>
-                                <nil key="textColor"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-99-4Gf">
                                 <rect key="frame" x="79.5" y="602" width="54" height="30"/>
