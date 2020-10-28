@@ -58,6 +58,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    
+    @IBAction func onLogoutButton(_ sender: UIBarButtonItem) {
+        print("logout")
+        PFUser.logOut()
+        // switch back to login scren
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
