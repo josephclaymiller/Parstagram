@@ -18,6 +18,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // FIXME: Dismiss keyboard when done typing
     }
     
     @IBAction func onSubmit(_ sender: UIButton) {
