@@ -24,6 +24,7 @@ Here are walkthroughs of implemented user stories:
 
 <img src='parse5.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='parse4.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='parse6.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ## Parstagram - Part I
 
