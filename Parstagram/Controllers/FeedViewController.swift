@@ -17,6 +17,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let commentBar = MessageInputBar()
     var showsCommentBar = false
     var posts = [PFObject]()
+    var selectedPost: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +73,36 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // Create the comment
+        createComment(text)
         // Clear and dismiss the input
         dismissComment()
         commentBar.inputTextView.resignFirstResponder()
+    }
+    
+    func createFakeComment() {
+        let comment = PFObject(className: "Comments")
+        comment["text"] = "Great picture!"
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()!
+        selectedPost.add(comment, forKey: "comments")
+        selectedPost.saveInBackground { (success: Bool, error: Error?) in
+            if success { print("Comment saved") }
+            else { print("Error saving comment") }
+        }
+        tableView.reloadData()
+    }
+    
+    func createComment(_ text: String) {
+        let comment = PFObject(className: "Comments")
+        comment["text"] = text
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()!
+        selectedPost.add(comment, forKey: "comments")
+        selectedPost.saveInBackground { (success: Bool, error: Error?) in
+            if success { print("Comment saved") }
+            else { print("Error saving comment") }
+        }
+        tableView.reloadData()
     }
     
     // MARK: - Table View Data Source methods
@@ -127,24 +155,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = posts[indexPath.section]
         let comments = post["comments"] as? [PFObject] ?? []
         
+        selectedPost = post
+        
         if indexPath.row == comments.count + 1 {
-            // Raise keyboard
+            // Raise keyboard to type comment
             showsCommentBar = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
         }
-//        Fake comment
-//        comment["text"] = "Great picture!"
-//        comment["post"] = post
-//        comment["author"] = PFUser.current()!
-//        post.add(comment, forKey: "comments")
-//        post.saveInBackground { (success: Bool, error: Error?) in
-//            if success {
-//                print("Comment saved")
-//            } else {
-//                print("Error saving comment")
-//            }
-//        }
     }
     
     // MARK: - Interface Builder Actions
